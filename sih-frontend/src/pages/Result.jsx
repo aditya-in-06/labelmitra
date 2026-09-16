@@ -14,6 +14,17 @@ export default function Result() {
       <div><span>Potential Issues</span><strong>{issues.length || "—"}</strong><small>Requires review where applicable</small></div>
     </div>
     <section className="inspection-panel"><div className="panel-heading"><div className="panel-title"><div className="panel-index">01</div><div><h2>Detected declarations</h2><p>Extracted values are shown for verification.</p></div></div></div>{declarations.length ? <div className="result-table-green">{declarations.map((x,i)=><div key={i}><b>{String(x.field||"Field").replaceAll("_"," ")}</b><span>{x.value||"Not detected"}</span><em>{x.confidence!=null?`${Math.round(Number(x.confidence)*100)}% confidence`:"Review"}</em></div>)}</div> : <div className="empty-green">{result ? "The analysis returned a result, but no declaration list was provided." : "No inspection result is available yet. Start a new inspection to continue."}</div>}</section>
-    {issues.length>0 && <section className="inspection-panel"><div className="panel-title"><div className="panel-index">02</div><div><h2>Potential compliance issues</h2><p>Items that may require review.</p></div></div>{issues.map((v,i)=><div className="issue-green" key={i}><b>!</b><div><strong>{v.rule||v.field||"Review required"}</strong><p>{v.message||v.reason||String(v)}</p></div></div>)}</section>}
+    {issues.length>0 && <section className="inspection-panel"><div className="panel-title"><div className="panel-index">02</div><div><h2>Potential compliance issues</h2><p>Items that may require review.</p></div></div>{issues.map((v,i)=><div className="issue-green" key={i}><b>!</b><div><strong>{v.rule||v.field||"Review required"}</strong><p>{
+  typeof v === "string"
+    ? v
+    : v?.message ||
+      v?.reason ||
+      v?.description ||
+      v?.details ||
+      v?.explanation ||
+      (v?.field
+        ? `Review required for ${String(v.field).replaceAll("_", " ")}.`
+        : "Manual review recommended.")
+}</p></div></div>)}</section>}
   </div>;
 }

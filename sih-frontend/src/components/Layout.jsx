@@ -5,7 +5,9 @@ export default function Layout({ children }) {
     <div className="app-shell">
       <aside className="sidebar">
         <div className="brand">
-          <div className="brand-mark"><img src="/assets/labelmitra-mark.png" alt="LabelMitra" /></div>
+          <div className="brand-mark">
+            <img src="/assets/labelmitra-mark.png" alt="LabelMitra" />
+          </div>
           <div className="brand-copy">
             <strong>LabelMitra</strong>
             <small>AI-powered label assistant</small>
@@ -21,25 +23,22 @@ export default function Layout({ children }) {
           </nav>
         </div>
 
-        <div className="nav-section food-nav-section">
-          <span className="nav-label">Food Intelligence</span>
-          <nav className="nav">
-            <NavLink to="/quality"><span className="nav-icon food-nav-icon">✦</span><span>Analyse Food</span></NavLink>
-          </nav>
-        </div>
-
         <div className="sidebar-bottom">
           <div className="system-status">
             <span className="status-dot" />
             <div><strong>LabelMitra System</strong><span>Ready for analysis</span></div>
           </div>
-          <div className="sidebar-version">AI-assisted • Compliance + Food Intelligence</div>
+          <div className="sidebar-version">AI-assisted • Legal Metrology</div>
         </div>
       </aside>
 
       <div className="main-shell">
         <header className="topbar">
-          <div className="topbar-title"><strong>LabelMitra</strong><span>Product Intelligence Workspace</span></div>
+          <div className="topbar-title">
+            <img className="mobile-brand-mark" src="/assets/labelmitra-mark.png" alt="LabelMitra" />
+            <strong>LabelMitra</strong>
+            <span>Legal Metrology Inspection Workspace</span>
+          </div>
           <div className="officer"><span className="officer-status" /><span>Inspector</span><span className="officer-arrow">▾</span></div>
         </header>
         <main>{children}</main>
