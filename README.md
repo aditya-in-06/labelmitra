@@ -167,7 +167,7 @@ If the roadmap is realized, the intended benefits are faster first-level verific
 
 ## Team
 
-**Neural Nexus**, IIT Patna
+**NEXORA**, IIT Patna
 
 
 *This README reflects the project's current design and confirmed implementation status as of the latest development round. Sections will be updated as components move from planned to working.*
