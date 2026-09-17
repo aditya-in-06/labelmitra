@@ -6,7 +6,7 @@ An explainable, evidence-linked inspection assistant for packaged-product labels
 
 > "AI helps us read the label. Rules help us decide what it means."
 
-Built by **Team Neural Nexus, IIT Patna**.
+Built by **Team  NEXORA, IIT Patna**.
 
 ---
 
